@@ -27,6 +27,12 @@ gulp.task('default', function(){
   //run browserfiy
   var bundler = watchify(browserifiy({
     //going to look for 'how' to apply to pages
-    entries: []
+    entries: ['./src/app.jsx'],
+    trans: [reactify],
+    extensions: ['.jsx'],
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true
   }))
 });
