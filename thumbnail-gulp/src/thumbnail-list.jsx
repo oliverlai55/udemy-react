@@ -1,8 +1,12 @@
-var Thumbnail = require('thumbnail');
+
+var React = require('react');
+var Thumbnail = require('./thumbnail');
 //go find module in project with file name of thumbnail and assign
 //to var Thumbnail
 
-var ThumbnailList = React.createClass({
+
+
+module.exports = React.createClass({
   render: function(){
     var list = this.props.thumbnailData.map(function(thumbnailProps){
       //list is the array of thumbnail instances

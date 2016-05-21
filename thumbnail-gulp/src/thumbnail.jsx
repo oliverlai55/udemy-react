@@ -4,7 +4,7 @@ var Badge = require('./badge');
 //we have to tell where to require the file
 //need to specify path file directory for browserify
 
-var Thumbnail = React.createClass({
+module.exports = React.createClass({
   render: function(){
     return
     (<div className="thumbnail">
