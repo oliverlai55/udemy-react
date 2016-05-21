@@ -39,12 +39,13 @@ gulp.task('default', function(){
 //tells bundler object to do something
   function build(file){
     if(file) gutil.log('Recompiling ' + file);
-    return bundler
+    return ( bundler
       .bundle()
       .on('error', gutil.log.bind(gutil, "Browserify Error"))
       //if there is error, output it
       .pipe(source('main.js'))
-      .pipe(gulp.dest('./'));
+      .pipe(gulp.dest('./'))
+    )
   };
 
   build()

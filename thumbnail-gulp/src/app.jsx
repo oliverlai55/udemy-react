@@ -21,6 +21,6 @@ var options = {
 
 //ask react to render this class
 var element = React.createElement(ThumbnailList, options);
-ReactDOM.render(element, document.querySelector('.target'));
+React.render(element, document.querySelector('.container'));
 //when we ask react to render this class, we will tel lit where
 //to place the rendered element in the dom

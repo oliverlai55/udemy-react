@@ -6,8 +6,8 @@ var Badge = require('./badge');
 
 module.exports = React.createClass({
   render: function(){
-    return
-    (<div className="thumbnail">
+    return (
+      <div className="thumbnail">
     <img src={this.props.imageUrl} />
     <div class="caption">
     <h3>{this.props.header}</h3>

@@ -10,12 +10,14 @@ module.exports = React.createClass({
   render: function(){
     var list = this.props.thumbnailData.map(function(thumbnailProps){
       //list is the array of thumbnail instances
-      return ( <Thumbnail {...thumbnailProps}/>
+      return (
+        <Thumbnail {...thumbnailProps}/>
       //take entire oobject and passing it in, the entire thmbnail instances
     )
     });
 
-    return ( <div>
+    return (
+      <div>
       {list}
      </div>
    )
