@@ -25,10 +25,10 @@ var reactify = require('reactify');
 
 gulp.task('default', function(){
   //run browserfiy
-  var bundler = watchify(browserifiy({
+  var bundler = watchify(browserify({
     //going to look for 'how' to apply to pages
     entries: ['./src/app.jsx'],
-    trans: [reactify],
+    transform: [reactify],
     extensions: ['.jsx'],
     debug: true,
     cache: {},
@@ -41,12 +41,13 @@ gulp.task('default', function(){
     if(file) gutil.log('Recompiling ' + file);
     return bundler
       .bundle()
-      .on('error', gutil.log.bind(gutil, "Browerify Error"))
+      .on('error', gutil.log.bind(gutil, "Browserify Error"))
       //if there is error, output it
       .pipe(source('main.js'))
       .pipe(gulp.dest('./'));
   };
 
   build()
+  //runs build function
   bundler.on('update', build)
 });

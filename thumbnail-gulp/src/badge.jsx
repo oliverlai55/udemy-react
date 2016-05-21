@@ -1,6 +1,8 @@
 //converts to vanilla js
 //define a react component class
-var Badge = React.createClass({
+
+var React = require('react');
+module.exports = React.createClass({
   render: function(){
 
     //make sure to use className
