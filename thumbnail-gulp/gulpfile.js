@@ -1,14 +1,14 @@
-var gulp = require('gulp');
-var react = require('gulp-react');
-var concat = require('gulp-concat');
-
-gulp.task('default', function() {
-  return gulp.src('src/**')
-    .pipe(react())
-    .pipe(concat('application.js'))
-    .pipe(gulp.dest('./'));
-    //first do this, then do this, next step (pipe)
-});
+// var gulp = require('gulp');
+// var react = require('gulp-react');
+// var concat = require('gulp-concat');
+//
+// gulp.task('default', function() {
+//   return gulp.src('src/**')
+//     .pipe(react())
+//     .pipe(concat('application.js'))
+//     .pipe(gulp.dest('./'));
+//     //first do this, then do this, next step (pipe)
+// });
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -34,5 +34,19 @@ gulp.task('default', function(){
     cache: {},
     packageCache: {},
     fullPaths: true
-  }))
+  }));
+
+//tells bundler object to do something
+  function build(file){
+    if(file) gutil.log('Recompiling ' + file);
+    return bundler
+      .bundle()
+      .on('error', gutil.log.bind(gutil, "Browerify Error"))
+      //if there is error, output it
+      .pipe(source('main.js'))
+      .pipe(gulp.dest('./'));
+  };
+
+  build()
+  bundler.on('update', build)
 });
