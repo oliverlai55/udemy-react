@@ -5,7 +5,7 @@ var options = {
   title: 'Choose a dessert', //what should show up on the button to open/close dropdown
   items: [//list of items to show on dropdown
     'Apple Pie',
-    'Peach Cobbier',
+    'Peach Cobbler',
     'Coconut Cream Pie'
   ]
 };
