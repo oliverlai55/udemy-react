@@ -16,10 +16,13 @@ module.exports = React.createClass({
   getInitialState: function(){
     return { open: false}
   },
+  handleItemClick: function(item){
+    console.log(item);
+  },
   render: function(){
     var list = this.props.items.map(function(item){
       return (
-        <ListItem item = {item} />
+        <ListItem item = {item} whenItemClicked={this.handleItemClick} />
       )
     });
     return (
