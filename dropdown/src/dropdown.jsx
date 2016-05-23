@@ -8,11 +8,13 @@ var ListItem = require('./list-item');
 
 module.exports = React.createClass({
   handleClick: function(){
-    alert('hello from dropdown');
+    this.setState({open: !this.state.open});
+    //this toggles the state
+    //State: responding to user input
+    //Props: data we are trying to show
   },
   getInitialState: function(){
     return { open: false}
-    //lets dropdown NOT open initially
   },
   render: function(){
     var list = this.props.items.map(function(item){
